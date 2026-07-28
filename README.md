@@ -9,7 +9,7 @@ preview.
 - Project owner and copyright holder: Equis Nexus
 - Repository custodian: the `nilpost` GitHub account
 - License: proprietary; source visibility does not grant reuse rights
-- Current version: `0.5.0`
+- Current version: `0.5.1`
 
 ## Status
 
@@ -17,9 +17,10 @@ The source repository is public as a clean, sanitized snapshot beginning with
 version `0.5.0`. Earlier development history and pull-request discussions remain
 in a separate private archive.
 
-The deployed website remains an **owner-only private preview** while management,
-legal, accounting, financial-data, and website-publication approval are
-completed. Public source visibility does not make the hosted website public.
+The website is publicly available at
+[equis-nexus.com](https://equis-nexus.com). The public release continues to
+withhold exact financial information, precise property details, investor
+records, and unapproved performance data.
 
 Future releases must follow
 [`docs/publication-checklist.md`](docs/publication-checklist.md).
@@ -176,8 +177,9 @@ npm audit
 
 The validated Git commit is packaged and deployed through OpenAI Sites.
 Cloudflare provides the custom-domain DNS records and HTTPS certificate.
-Production access remains owner-only until an authorized Equis Nexus
-representative explicitly approves public access.
+Production access is public following explicit authorization from the Equis
+Nexus owner. Repository visibility and website access remain separately
+controlled for future releases.
 
 Operational details and DNS safeguards are documented in
 [`docs/cloudflare-deployment.md`](docs/cloudflare-deployment.md).
