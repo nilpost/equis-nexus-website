@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "name": "Equis Nexus Website",
+    "version": "0.5.0",
+    "repositoryName": "equis-nexus-website",
+    "description": "Official source repository for the Equis Nexus welcome website.",
+    "status": "private-preview",
+    "visibility": "public-source-private-site",
+    "defaultLanguage": "en",
+    "supportedLanguages": ["en", "ca", "es", "ja"]
+  },
+  "organization": {
+    "displayName": "Equis Nexus",
+    "legalForm": "Godo Kaisha",
+    "jurisdiction": "Japan",
+    "contactEmail": "icontact@equis-nexus.com",
+    "projectOwner": "Equis Nexus",
+    "copyrightHolder": "Equis Nexus",
+    "repositoryCustodian": "nilpost"
+  },
+  "website": {
+    "type": "company-welcome-site",
+    "productionDomain": "equis-nexus.com",
+    "canonicalUrl": "https://equis-nexus.com",
+    "hostingProvider": "OpenAI Sites",
+    "dnsProvider": "Cloudflare"
+  },
+  "deployment": {
+    "platform": "OpenAI Sites",
+    "productionBranch": "main",
+    "buildCommand": "npm run build",
+    "outputDirectory": ".vinext",
+    "configurationStatus": "private-preview"
+  },
+  "content": {
+    "businessInformationSource": "docs/equis-nexus-business-information.md",
+    "approvalRequiredBeforePublication": true
+  },
+  "repository": {
+    "defaultBranch": "main",
+    "protectedBranchRecommended": true,
+    "license": "Proprietary / All rights reserved",
+    "externalContributionsAccepted": false,
+    "secretsCommitted": false,
+    "publicReadiness": "public"
+  }
+}

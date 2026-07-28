@@ -1,0 +1,11 @@
+{
+  "name": "Equis Nexus",
+  "short_name": "Equis Nexus",
+  "description": "Official Equis Nexus website.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#111827",
+  "icons": []
+}
