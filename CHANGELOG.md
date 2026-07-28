@@ -12,6 +12,16 @@ development milestones; the public repository begins with version 0.5.0.
 
 - Reserved for changes that have not yet received a version.
 
+## [0.5.1] - 2026-07-29
+
+### Changed
+
+- Made the hosted website publicly accessible at `https://equis-nexus.com`.
+- Confirmed HTTP-to-HTTPS routing and anonymous access to the English, Catalan,
+  Spanish, Japanese, portfolio, and investor-preview routes.
+- Kept the investor page as a non-authenticating preview with no form-data
+  storage or transmission.
+
 ## [0.5.0] - 2026-07-29
 
 ### Added

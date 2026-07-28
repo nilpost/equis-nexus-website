@@ -45,4 +45,4 @@ A repository version and a Sites deployment are related but distinct:
 - A version records the state and meaning of the source.
 - A deployment makes one exact source commit active on the hosted website.
 - Repository visibility does not change website access.
-- Website access remains owner-only until separately approved.
+- Website access is currently public following separate owner authorization.

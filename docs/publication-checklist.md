@@ -30,7 +30,7 @@ relevant section before changing either one.
 - [ ] Add privacy and legal notices required for the intended audience.
 - [ ] Confirm accessibility, mobile presentation, metadata, and language quality.
 - [ ] Decide whether analytics are needed and review consent obligations first.
-- [ ] Obtain explicit approval before changing Sites access from owner-only.
+- [x] Obtain explicit approval before changing Sites access from owner-only.
 
 ## Current audit status
 
@@ -44,5 +44,5 @@ As of 2026-07-29:
 - The reachable Git history contains a precise registered-office/unit address
   only in the separate private archive, not in the public repository.
 - The public repository begins from a clean version 0.5.0 snapshot.
-- Website access remains private pending separate content and publication
-  approval.
+- Website access was made public on 2026-07-29 following explicit owner
+  authorization.
