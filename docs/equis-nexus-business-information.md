@@ -25,7 +25,7 @@ property-disclosure policy.
 
 - Canonical domain: `https://equis-nexus.com`
 - Contact: `icontact@equis-nexus.com`
-- Application hosting: OpenAI Sites
+- Application hosting: Cloudflare Workers
 - DNS and HTTPS: Cloudflare
 
 ## Approved public positioning

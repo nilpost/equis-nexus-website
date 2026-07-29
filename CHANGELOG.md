@@ -12,6 +12,31 @@ development milestones; the public repository begins with version 0.5.0.
 
 - Reserved for changes that have not yet received a version.
 
+## [0.6.0] - 2026-07-29
+
+### Changed
+
+- Migrated the production runtime from OpenAI Sites to an Equis Nexus-controlled
+  Cloudflare Worker.
+- Added a tracked Wrangler configuration and direct Cloudflare deployment
+  scripts.
+- Connected production builds to the public GitHub repository.
+- Preserved the canonical domain, multilingual routes, disclosure safeguards,
+  and investor-preview behavior.
+- Updated architecture, deployment, ownership, and operational documentation.
+
+### Removed
+
+- Removed OpenAI Sites project metadata and its packaging helper.
+- Removed the unused image-optimization binding path so the Worker requires no
+  Cloudflare Images subscription.
+
+### Security
+
+- Preserved all existing email DNS records during the application cutover.
+- Kept Cloudflare account identifiers, OAuth credentials, and deployment tokens
+  outside the repository.
+
 ## [0.5.1] - 2026-07-29
 
 ### Changed

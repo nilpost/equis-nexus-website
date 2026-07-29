@@ -9,7 +9,7 @@ preview.
 - Project owner and copyright holder: Equis Nexus
 - Repository custodian: the `nilpost` GitHub account
 - License: proprietary; source visibility does not grant reuse rights
-- Current version: `0.5.1`
+- Current version: `0.6.0`
 
 ## Status
 
@@ -69,7 +69,7 @@ storage under `equis-nexus-language`.
 ```mermaid
 flowchart LR
     A["Visitor browser"] --> B["Cloudflare DNS and HTTPS"]
-    B --> C["OpenAI Sites / Cloudflare Worker"]
+    B --> C["Equis Nexus Cloudflare Worker"]
     C --> D["Vinext server-rendered React"]
     D --> E["Localized page components"]
     E --> F["Approved public portfolio model"]
@@ -95,7 +95,7 @@ data flow, localization, build output, deployment, and extension guidance.
 - TypeScript 5
 - Vinext and Vite
 - Cloudflare Workers runtime
-- OpenAI Sites deployment
+- Cloudflare Workers deployment owned by the Equis Nexus Cloudflare account
 - Cloudflare-managed DNS and HTTPS
 - Node’s built-in test runner and ESLint
 
@@ -108,8 +108,6 @@ registry. It is independent of GitHub repository visibility.
 .
 ├── .github/
 │   └── CODEOWNERS
-├── .openai/
-│   └── hosting.json
 ├── app/
 │   ├── components/              Shared page and interface components
 │   ├── data/portfolio.ts        Typed asset and disclosure model
@@ -117,8 +115,6 @@ registry. It is independent of GitHub repository visibility.
 │   ├── localized-metadata.ts    Canonical and hreflang metadata
 │   ├── ca/ es/ ja/              Localized route wrappers
 │   └── ...                      English routes and global layout
-├── build/
-│   └── sites-vite-plugin.ts     Deployment metadata packaging helper
 ├── docs/
 │   ├── architecture.md
 │   ├── cloudflare-deployment.md
@@ -128,6 +124,7 @@ registry. It is independent of GitHub repository visibility.
 ├── public/                      Manifest and approved visual assets
 ├── tests/                       Render, disclosure, and privacy tests
 ├── worker/                      Cloudflare runtime entrypoint
+├── wrangler.jsonc               Cloudflare Worker deployment configuration
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
 ├── LICENSE
@@ -135,9 +132,9 @@ registry. It is independent of GitHub repository visibility.
 └── project-manifest.json
 ```
 
-`.openai/hosting.json` contains only the non-secret Sites project identifier and
-logical resource bindings. Runtime credentials and deployment tokens must never
-be stored in the repository.
+`wrangler.jsonc` contains the public Worker name and runtime configuration.
+Cloudflare credentials and deployment tokens must never be stored in the
+repository.
 
 ## Local development
 
@@ -175,11 +172,11 @@ npm audit
 
 ## Deployment
 
-The validated Git commit is packaged and deployed through OpenAI Sites.
-Cloudflare provides the custom-domain DNS records and HTTPS certificate.
-Production access is public following explicit authorization from the Equis
-Nexus owner. Repository visibility and website access remain separately
-controlled for future releases.
+The validated Git commit is built and deployed directly to Cloudflare Workers
+through Cloudflare's GitHub integration. Cloudflare manages the application
+runtime, custom-domain routing, DNS, and HTTPS certificate within the
+Equis Nexus-controlled account. Repository visibility and website access remain
+separately controlled for future releases.
 
 Operational details and DNS safeguards are documented in
 [`docs/cloudflare-deployment.md`](docs/cloudflare-deployment.md).

@@ -10,13 +10,12 @@ information from entering the public interface.
 
 The project is a server-rendered React website built with the
 Next.js-compatible Vinext toolchain and deployed to a Cloudflare Workers runtime
-through OpenAI Sites.
+owned by the Equis Nexus Cloudflare account.
 
 ```mermaid
 flowchart TD
     Browser["Visitor browser"]
     DNS["Cloudflare DNS and TLS"]
-    Sites["OpenAI Sites deployment"]
     Worker["Cloudflare Worker entrypoint"]
     Router["Vinext route and rendering layer"]
     Pages["Shared localized page components"]
@@ -24,7 +23,7 @@ flowchart TD
     Portfolio["Typed portfolio disclosure model"]
     Local["Browser-local language preference"]
 
-    Browser --> DNS --> Sites --> Worker --> Router --> Pages
+    Browser --> DNS --> Worker --> Router --> Pages
     Copy --> Pages
     Portfolio --> Pages
     Browser <--> Local
@@ -117,11 +116,10 @@ The release flow is:
 
 1. Validate linting and tests.
 2. Commit the exact reviewed source.
-3. Push the commit to the private GitHub repository.
-4. Push the same commit to the Sites source repository.
-5. Package the Workers build.
-6. Save and deploy a Sites version.
-7. Verify the private production routes and custom domain.
+3. Merge the reviewed release into the public GitHub repository.
+4. Let Cloudflare Workers Builds compile and deploy the exact `main` commit.
+5. Verify the generated `workers.dev` address before changing the custom domain.
+6. Verify all production routes from multiple regions after deployment.
 
 Cloudflare manages DNS and HTTPS for `equis-nexus.com`. Existing email DNS
 records are outside the website deployment and must not be changed as part of a
@@ -131,10 +129,9 @@ site release.
 
 - Environment files, deployment output, local Workers state, and logs are
   ignored.
-- Sites credentials are short-lived and passed per command; they are not saved
-  to Git configuration or files.
-- The Sites project identifier in `.openai/hosting.json` is not an access
-  credential.
+- Cloudflare and GitHub credentials are managed by their respective platforms
+  and are never committed.
+- `wrangler.jsonc` contains no secret account identifier or token.
 - The investor preview has no authentication or data-submission capability.
 - Exact financial values and investor records belong outside this repository.
 - Public rendering tests reject confidential address and financing patterns.

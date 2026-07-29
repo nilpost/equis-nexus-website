@@ -4,8 +4,6 @@
 !.env.example
 node_modules/
 dist/
-build/*
-!build/sites-vite-plugin.ts
 .next/
 .vinext/
 .wrangler/

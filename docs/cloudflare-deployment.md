@@ -3,21 +3,52 @@
 ## Current configuration
 
 - Production domain: `equis-nexus.com`
-- Application hosting: OpenAI Sites
-- DNS and HTTPS: Cloudflare
+- Application hosting: Cloudflare Workers
+- DNS, custom-domain routing, and HTTPS: Cloudflare
 - Source provider: GitHub
 - Production branch: `main`
 - Repository: `equis-nexus-website`
+- Worker: `equis-nexus`
 
-The apex hostname uses the Sites-provided DNS records. Cloudflare proxying must
-remain disabled for the two application A records so Sites can validate and
-serve the custom hostname. Existing MX, SPF, DKIM, DMARC, and other mail records
-must remain unchanged.
+The Worker is connected to the GitHub repository through Cloudflare Workers
+Builds. A merge to `main` creates the production build. Pull-request branches
+may create preview versions without changing the production route.
+
+The apex hostname is assigned to the Worker as a Cloudflare custom domain.
+Existing MX, SPF, DKIM, DMARC, and other mail records are outside the
+application deployment and must remain unchanged.
+
+## Build and deployment
+
+Cloudflare uses:
+
+- Build command: `npm run build`
+- Deploy command: `npm run deploy:built`
+- Preview deploy command: `wrangler versions upload`
+
+The Vite plugin creates the Workers deployment output and static-asset
+configuration. `wrangler.jsonc` supplies the Worker name, entry point,
+compatibility date, and runtime flags.
+
+Before switching the custom domain:
+
+1. Validate linting, tests, and dependency audits locally.
+2. Deploy and verify the generated `workers.dev` address.
+3. Confirm all twelve localized routes and public-disclosure tests.
+4. Record the current application DNS records for rollback.
+5. Attach `equis-nexus.com` to the Worker.
+6. Verify HTTPS and availability from Japan and Hong Kong.
+
+## Rollback
+
+Cloudflare keeps previous Worker versions available for rollback. If the custom
+domain must be returned to the former host, restore only the recorded
+application A records. Do not alter mail or verification records.
 
 ## Canonical-domain recommendation
 
-Use `https://equis-nexus.com` as the canonical public address. Add a `www`
-redirect only after the apex hostname is active and approved for public launch.
+Use `https://equis-nexus.com` as the canonical public address. A `www` redirect
+may be added separately after the apex hostname is verified.
 
 ## Email-domain note
 
