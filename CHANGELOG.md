@@ -21,6 +21,7 @@ development milestones; the public repository begins with version 0.5.0.
 - Added a tracked Wrangler configuration and direct Cloudflare deployment
   scripts.
 - Connected production builds to the public GitHub repository.
+- Activated `equis-nexus.com` as the Worker's production custom domain.
 - Preserved the canonical domain, multilingual routes, disclosure safeguards,
   and investor-preview behavior.
 - Updated architecture, deployment, ownership, and operational documentation.
@@ -36,6 +37,8 @@ development milestones; the public repository begins with version 0.5.0.
 - Preserved all existing email DNS records during the application cutover.
 - Kept Cloudflare account identifiers, OAuth credentials, and deployment tokens
   outside the repository.
+- Verified successful production responses from Japan and three independent
+  Hong Kong networks after global routing propagation completed.
 
 ## [0.5.1] - 2026-07-29
 

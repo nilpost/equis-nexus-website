@@ -9,6 +9,7 @@
 - Production branch: `main`
 - Repository: `equis-nexus-website`
 - Worker: `equis-nexus`
+- Production status: active and externally verified on 2026-07-29
 
 The Worker is connected to the GitHub repository through Cloudflare Workers
 Builds. A merge to `main` creates the production build. Pull-request branches
@@ -17,6 +18,10 @@ may create preview versions without changing the production route.
 The apex hostname is assigned to the Worker as a Cloudflare custom domain.
 Existing MX, SPF, DKIM, DMARC, and other mail records are outside the
 application deployment and must remain unchanged.
+
+The former OpenAI Sites deployment is no longer assigned to the canonical
+domain. It is retained only as a rollback copy and does not serve production
+traffic.
 
 ## Build and deployment
 
@@ -38,6 +43,10 @@ Before switching the custom domain:
 4. Record the current application DNS records for rollback.
 5. Attach `equis-nexus.com` to the Worker.
 6. Verify HTTPS and availability from Japan and Hong Kong.
+
+The 2026-07-29 migration completed this sequence. All public route families
+returned HTTP 200 from the production domain, followed by HTTP 200 responses
+from three independent Hong Kong networks after edge propagation completed.
 
 ## Rollback
 
