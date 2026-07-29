@@ -31,7 +31,7 @@
     "productionBranch": "main",
     "buildCommand": "npm run build",
     "outputDirectory": ".vinext",
-    "configurationStatus": "migration-ready"
+    "configurationStatus": "active-production"
   },
   "content": {
     "businessInformationSource": "docs/equis-nexus-business-information.md",

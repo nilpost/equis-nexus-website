@@ -18,7 +18,9 @@ version `0.5.0`. Earlier development history and pull-request discussions remain
 in a separate private archive.
 
 The website is publicly available at
-[equis-nexus.com](https://equis-nexus.com). The public release continues to
+[equis-nexus.com](https://equis-nexus.com) from an Equis Nexus-controlled
+Cloudflare Worker. Production routing was verified from Japan and three
+independent Hong Kong networks on 2026-07-29. The public release continues to
 withhold exact financial information, precise property details, investor
 records, and unapproved performance data.
 
