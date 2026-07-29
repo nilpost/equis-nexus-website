@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "project": {
     "name": "Equis Nexus Website",
-    "version": "0.5.1",
+    "version": "0.6.0",
     "repositoryName": "equis-nexus-website",
     "description": "Official source repository for the Equis Nexus welcome website.",
     "status": "public-production",
@@ -23,15 +23,15 @@
     "type": "company-welcome-site",
     "productionDomain": "equis-nexus.com",
     "canonicalUrl": "https://equis-nexus.com",
-    "hostingProvider": "OpenAI Sites",
+    "hostingProvider": "Cloudflare Workers",
     "dnsProvider": "Cloudflare"
   },
   "deployment": {
-    "platform": "OpenAI Sites",
+    "platform": "Cloudflare Workers",
     "productionBranch": "main",
     "buildCommand": "npm run build",
     "outputDirectory": ".vinext",
-    "configurationStatus": "public-production"
+    "configurationStatus": "migration-ready"
   },
   "content": {
     "businessInformationSource": "docs/equis-nexus-business-information.md",

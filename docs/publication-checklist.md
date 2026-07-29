@@ -30,7 +30,7 @@ relevant section before changing either one.
 - [ ] Add privacy and legal notices required for the intended audience.
 - [ ] Confirm accessibility, mobile presentation, metadata, and language quality.
 - [ ] Decide whether analytics are needed and review consent obligations first.
-- [x] Obtain explicit approval before changing Sites access from owner-only.
+- [x] Obtain explicit owner approval before publishing the website.
 
 ## Current audit status
 
