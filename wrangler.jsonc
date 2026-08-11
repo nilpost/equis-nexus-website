@@ -6,5 +6,22 @@
   "compatibility_flags": ["nodejs_compat"],
   "observability": {
     "enabled": true
-  }
+  },
+
+  // The production hostname. This was live and serving before it was declared
+  // here — the custom domain existed only in the Cloudflare dashboard, so this
+  // file did not describe what was actually deployed. Declaring it keeps the
+  // routing in version control alongside the Worker it belongs to.
+  //
+  // Note this site is the APEX equis-nexus.com, not a postiusgroup.com
+  // subdomain. postius-hub/projects.json briefly recorded it as an undeployed
+  // "equis" subdomain, which caused a 2026-08-04 sweep to read it as missing
+  // and propose deploying it there — that would have duplicated this live
+  // site. See nilpost/postius-hub#4.
+  "routes": [
+    {
+      "pattern": "equis-nexus.com",
+      "custom_domain": true
+    }
+  ]
 }
